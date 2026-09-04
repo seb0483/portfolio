@@ -1,0 +1,486 @@
+/* ==========================================================================
+   components.css — Navbar, Cards, Buttons, Footer Styles
+   ========================================================================== */
+
+/* ==========================================================================
+   Navbar
+   ========================================================================== */
+
+.navbar-custom {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1030;
+  background-color: transparent;
+  padding: var(--space-xl) var(--space-2xl);
+  transition: padding var(--transition-base), box-shadow var(--transition-base);
+}
+
+.navbar-custom.scrolled {
+  box-shadow: var(--shadow-md);
+  padding: var(--space-lg) var(--space-2xl);
+}
+
+.navbar-brand-custom {
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary) !important;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.navbar-brand-custom:hover {
+  color: var(--color-secondary) !important;
+  text-decoration: none;
+}
+
+.navbar-nav-custom {
+  display: flex;
+  gap: 4rem;
+}
+
+.nav-link-custom {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-gray-600) !important;
+  padding: var(--space-sm) 0 !important;
+  border-radius: 0;
+  position: relative;
+  transition: color var(--transition-fast);
+  text-decoration: none;
+  border-bottom: none;
+}
+
+.nav-link-custom::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -2px;
+  height: 2px;
+  background: var(--color-secondary);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform var(--transition-fast);
+}
+
+.nav-link-custom:hover,
+.nav-link-custom.active {
+  color: var(--color-primary) !important;
+  background-color: transparent;
+  text-decoration: none;
+  border-bottom: none;
+}
+
+.nav-link-custom:hover::after,
+.nav-link-custom.active::after {
+  transform: scaleX(1);
+}
+
+.nav-link-cta {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-primary) !important;
+  padding: var(--space-sm) 0 !important;
+  border-radius: 0;
+  position: relative;
+  transition: color var(--transition-fast);
+  text-decoration: none;
+  border-bottom: none;
+}
+
+.nav-link-cta::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -2px;
+  height: 2px;
+  background: var(--color-secondary);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform var(--transition-fast);
+}
+
+.nav-link-cta:hover,
+.nav-link-cta.active {
+  color: var(--color-secondary) !important;
+  background-color: transparent;
+  text-decoration: none;
+  border-bottom: none;
+}
+
+.nav-link-cta:hover::after,
+.nav-link-cta.active::after {
+  transform: scaleX(1);
+}
+
+.navbar-toggler-custom {
+  border: none;
+  padding: var(--space-sm);
+  background-color: transparent;
+}
+
+.navbar-toggler-custom:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+.navbar-toggler-icon-custom {
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2817, 24, 39, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+}
+
+@media (max-width: 991.98px) {
+  .navbar-collapse-custom {
+    background-color: var(--color-white);
+    margin: var(--space-md) calc(-1 * var(--space-lg)) 0;
+    padding: var(--space-lg);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--color-gray-200);
+  }
+
+  .navbar-nav-custom {
+    flex-direction: column;
+    gap: var(--space-sm);
+    align-items: center;
+  }
+
+  .nav-link-custom {
+    padding: var(--space-md) var(--space-lg) !important;
+    text-align: center;
+  }
+
+  .nav-link-custom::after {
+    display: none;
+  }
+
+  .nav-link-cta {
+    text-align: center;
+    margin-top: var(--space-sm);
+  }
+
+  .nav-link-cta::after {
+    display: none;
+  }
+}
+
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+
+.btn-custom {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  padding: var(--space-md) var(--space-xl);
+  border-radius: var(--radius-sm);
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: background-color var(--transition-base), border-color var(--transition-base), color var(--transition-base);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.btn-custom:focus-visible {
+  outline: 2px solid var(--color-secondary);
+  outline-offset: 2px;
+}
+
+.btn-primary-custom {
+  background-color: var(--color-secondary);
+  border-color: var(--color-secondary);
+  color: var(--color-white);
+}
+
+.btn-primary-custom:hover {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-white);
+  text-decoration: none;
+}
+
+.btn-outline-custom {
+  background-color: transparent;
+  border-color: var(--color-gray-400);
+  color: var(--color-gray-700);
+}
+
+.btn-outline-custom:hover {
+  background-color: var(--color-gray-50);
+  border-color: var(--color-gray-500);
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.btn-ghost-custom {
+  background-color: transparent;
+  border-color: transparent;
+  color: var(--color-secondary);
+}
+
+.btn-ghost-custom:hover {
+  background-color: var(--color-gray-100);
+  color: var(--color-primary-dark);
+  text-decoration: none;
+}
+
+@media (max-width: 575.98px) {
+  .btn-custom {
+    width: 100%;
+  }
+}
+
+/* ==========================================================================
+   Cards
+   ========================================================================== */
+
+.card-custom {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-md);
+  box-shadow: none;
+  overflow: hidden;
+  transition: border-color var(--transition-base);
+}
+
+.card-custom:hover {
+  border-color: var(--color-gray-400);
+}
+
+.card-custom .card-img-top {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.card-body-custom {
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.card-title-custom {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  margin-bottom: var(--space-sm);
+}
+
+.card-text-custom {
+  font-size: var(--font-size-base);
+  color: var(--color-gray-600);
+  line-height: 1.7;
+  margin-bottom: var(--space-md);
+  flex: 1;
+}
+
+/* ==========================================================================
+   Skill Category Card
+   ========================================================================== */
+
+.skill-category-card {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  border-radius: var(--radius-md);
+  padding: var(--space-xl);
+  transition: border-color var(--transition-base);
+  height: 100%;
+}
+
+.skill-category-card:hover {
+  border-color: var(--color-gray-400);
+}
+
+.skill-category-icon {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-gray-100);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-2xl);
+  color: var(--color-gray-700);
+  margin-bottom: var(--space-md);
+}
+
+.skill-category-title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  margin-bottom: var(--space-md);
+}
+
+.skill-category-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skill-category-list li {
+  font-size: var(--font-size-base);
+  color: var(--color-gray-600);
+  padding: var(--space-xs) 0;
+  border-bottom: 1px solid var(--color-gray-100);
+}
+
+.skill-category-list li:last-child {
+  border-bottom: none;
+}
+
+.skill-category-list li::before {
+  content: "—";
+  color: var(--color-gray-400);
+  margin-right: var(--space-sm);
+  font-weight: var(--font-weight-bold);
+}
+
+/* ==========================================================================
+   Skill Badges/Pills (About Section)
+   ========================================================================== */
+
+.skill-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-xs) var(--space-md);
+  background-color: var(--color-gray-100);
+  color: var(--color-gray-700);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.skill-badge:hover {
+  background-color: var(--color-gray-200);
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+/* ==========================================================================
+   Project Tags
+   ========================================================================== */
+
+.project-tag {
+  display: inline-block;
+  padding: var(--space-xs) var(--space-sm);
+  background-color: var(--color-gray-100);
+  color: var(--color-gray-600);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  border-radius: var(--radius-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.project-tag-primary {
+  background-color: var(--color-gray-200);
+  color: var(--color-gray-700);
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+.footer-custom {
+  background-color: var(--color-primary-dark);
+}
+
+.footer-brand {
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-white);
+  text-decoration: none;
+}
+
+.footer-brand:hover {
+  color: var(--color-gray-300);
+  text-decoration: none;
+}
+
+/* ==========================================================================
+   Section Dividers
+   ========================================================================== */
+
+.section-divider {
+  width: 40px;
+  height: 2px;
+  background: var(--color-secondary);
+  margin: 0 auto var(--space-xl);
+}
+
+/* ==========================================================================
+   Back to Top Button
+   ========================================================================== */
+
+.back-to-top {
+  position: fixed;
+  bottom: var(--space-xl);
+  right: var(--space-xl);
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border: none;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(16px);
+  transition: opacity var(--transition-base), visibility var(--transition-base), transform var(--transition-base);
+  z-index: 1000;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  background-color: var(--color-secondary);
+  box-shadow: var(--shadow-lg);
+}
+
+.back-to-top:focus-visible {
+  outline: 2px solid var(--color-secondary);
+  outline-offset: 2px;
+}
+
+/* ==========================================================================
+   Loading State
+   ========================================================================== */
+
+.loading-skeleton {
+  background: linear-gradient(90deg, var(--color-gray-200) 25%, var(--color-gray-100) 50%, var(--color-gray-200) 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+  border-radius: var(--radius-sm);
+}
+
+@keyframes loading {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
