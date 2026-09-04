@@ -626,6 +626,10 @@ img {
   font-size: var(--font-size-lg);
 }
 
+.contact-details {
+  text-align: start;
+}
+
 .contact-details p {
   color: rgba(255, 255, 255, 0.9);
   margin: 0;
