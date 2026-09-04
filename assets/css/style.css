@@ -922,8 +922,11 @@ img {
 
 @media (max-width: 767.98px) {
   .hero-profile-img {
-    width: 260px;
-    height: 260px;
+    width: 200px;
+    height: 200px;
+  }
+  .hero-image {
+    margin-top: -24px;
   }
 }
 
