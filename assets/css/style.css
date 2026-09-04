@@ -278,13 +278,14 @@ img {
    ========================================================================== */
 
 .hero {
-  height: 100vh;
+  min-height: 100vh;
+  height: auto;
   box-sizing: border-box;
   display: grid;
   place-items: center;
   padding: var(--space-4xl) 0;
   background-color: var(--color-white);
-  overflow: hidden;
+  overflow: visible;
 }
 
 .hero-content {
@@ -921,12 +922,15 @@ img {
 }
 
 @media (max-width: 767.98px) {
+  .hero {
+    place-items: start center;
+  }
+  .hero-image {
+    order: -1;
+  }
   .hero-profile-img {
     width: 200px;
     height: 200px;
-  }
-  .hero-image {
-    margin-top: -24px;
   }
 }
 
